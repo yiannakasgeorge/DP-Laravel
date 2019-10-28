@@ -1,14 +1,204 @@
+@import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import "~@fortawesome/fontawesome-free/css/fontawesome.min.css";
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+.navbar {
+    div.logo {
+        width: 128px;
+        height: 128px;
+        margin: 0;
+        padding: 0;
+        background-image: url("../assets/images/logo.png");
+        background-repeat: no-repeat;
+    }
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        padding: 6px 0px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.42857;
+    }
+    .btn-search {
+        color: #FFFFFF;
+        background-color: #E0AE2D;
+    }
+}
 
-// Variables
-@import 'variables';
+.main-content {
+    // max width large is the width of the main banner image
+    .max-w-large {
+        max-width: 1366px;
+    }
+    // max width small is the width shown on the screenshot for the rest of the rows
+    .max-w-small {
+        max-width: 1160px;
+    }
+    input,
+    textarea {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: #ced4da;
+        padding: 0.375rem 0.75rem;
+    }
+    .about-us {
+        .about-us-bg {
+            width: 100%;
+            height: auto;
+            background-image: url("../assets/images/image2.png");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+        }
+        .about-us-text {
+            z-index: 1;
+            float: left;
+            width: 65%;
+            /*important*/
+            padding: 25px;
+            width: 50%;
+            /*important*/
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+    .services {
+        background-color: #ECF3F0;
+        .icons {
+            flex-direction: row;
+            width: 100%;
+            align-items: flex-end;
+            .icon-left {
+                width: 100px;
+                height: 100px;
+                margin: 0 20px;
+                background-image: url("../assets/images/icon1.svg");
+                background-repeat: no-repeat;
+                background-position: left;
+                background-size: contain;
+            }
+            .icon-right {
+                width: 100px;
+                height: 100px;
+                margin: 0 20px;
+                background-image: url("../assets/images/icon2.svg");
+                background-repeat: no-repeat;
+                background-position: right;
+                background-size: contain;
+            }
+            .seperator {
+                flex: 1;
+                height: 25px;
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>') top left/10px 5px;
+                background-repeat: repeat-x;
+            }
+        }
+    }
+    .products {
+        .card {
+            height: 100%;
+            .card-img {
+                width: 100%;
+                height: 100%;
+                min-height: 390px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            .card-img-overlay {
+                bottom: 0;
+                top: 85%;
+                text-align: center;
+                transition: all 0.5s ease;
+            }
+            &:hover {
+                .card-img-overlay {
+                    display: flex!important;
+                    flex-flow: column;
+                    justify-content: center;
+                    top: 0;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    transition: all 0.5s ease;
+                    .card-text {
+                        display: flex!important;
+                    }
+                }
+            }
+        }
+        .prod-2 .card-img {
+            background-image: url("../assets/images/wheat-prod2.jpg")
+        }
+        .prod-3 .card-img {
+            background-image: url("../assets/images/barley-prod3.jpg")
+        }
+        .prod-4 .card-img {
+            background-image: url("../assets/images/rye-prod4.jpg")
+        }
+        .prod-5 .card-img {
+            background-image: url("../assets/images/beans-prod5.jpg")
+        }
+        .prod-6 .card-img {
+            background-image: url("../assets/images/peas-prod6.jpg")
+        }
+    }
+    .logos {
+        .logo-1,
+        .logo-2,
+        .logo-3,
+        .logo-4,
+        .logo-5 {
+            width: 180px;
+            height: 180px;
+            opacity: 0.5;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 128px;
+                height: 128px;
+                align-self: center;
+            }
+        }
+    }
+    .contact {
+        padding-bottom: 15px;
+        .contact-form {
+            .fa-user,
+            .fa-envelope,
+            .fa-comment {
+                position: relative;
+                float: right;
+                top: -25px;
+                right: 10px;
+            }
+            button.submit-contact-form {
+                width: 100%;
+                border: 2px solid #E0AA00;
+                border-radius: unset;
+            }
+        }
+    }
+    .newsletter {
+        .logo {
+            margin-top: 20px; //TODO
+        }
+        button.submit-newsletter-form {
+            width: 100%;
+            border: 2px solid #E0AA00;
+            border-radius: unset;
+        }
+    }
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+.footer-copyright {
+    border-top: 1px solid grey;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.scroll-to-top {
+    position: fixed;
+    bottom: 70px;
+    right: 150px;
+    display: none;
 }
