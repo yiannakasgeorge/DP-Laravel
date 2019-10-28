@@ -225,7 +225,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        // Provider
+        Weidner\Goutte\GoutteServiceProvider::class,
+        // Alias
+        'Goutte' => Weidner\Goutte\GoutteFacade::class,
     ],
 
 ];

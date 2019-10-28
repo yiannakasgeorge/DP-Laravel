@@ -17,3 +17,6 @@
 
 Route::get('/wholegrain', 'WholegrainWebController@index');
    
+Route::get('/scraper', function() {
+    return view('scraper');
+});
