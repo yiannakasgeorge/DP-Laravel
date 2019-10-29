@@ -21,7 +21,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+   
+    protected $redirectTo = '/admin.dashboard.index';
 
     /**
      * Create a new controller instance.
@@ -58,7 +59,7 @@ class LoginController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ], $request->get('remember'))) {
-            return redirect()->intended(route('admin.dashboard'));
+            return redirect()->intended(route('content.index'));
         }
         return back()->withInput($request->only('email', 'remember'));
     }
