@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -49195,10 +49195,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/***/ "./resources/js/admin/app.js":
+/*!***********************************!*\
+  !*** ./resources/js/admin/app.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49207,9 +49207,7 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-__webpack_require__(/*! ./custom.js */ "./resources/js/custom.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -49222,7 +49220,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
+Vue.component('example-component', __webpack_require__(/*! ../components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49235,10 +49233,10 @@ var app = new Vue({
 
 /***/ }),
 
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
+/***/ "./resources/js/admin/bootstrap.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/bootstrap.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49362,69 +49360,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/custom.js":
-/*!********************************!*\
-  !*** ./resources/js/custom.js ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $('#scroll-to-top').fadeIn();
-    } else {
-      $('#scroll-to-top').fadeOut();
-    }
-  }); // scroll body to 0px on click
-
-  $('.scroll-to-top').click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 400);
-    return false;
-  });
-  $(".btn-search").click(function (e) {
-    e.preventDefault();
-    $('form.search-nav').find('input.search').toggleClass('d-none');
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/sass/admin/app.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/admin/app.scss ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!**********************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/custom.js ./resources/sass/app.scss ./resources/sass/admin/app.scss ***!
-  \**********************************************************************************************************************/
+/***/ 1:
+/*!*****************************************!*\
+  !*** multi ./resources/js/admin/app.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/George/Documents/Git/DPLaravel/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/George/Documents/Git/DPLaravel/resources/js/custom.js */"./resources/js/custom.js");
-__webpack_require__(/*! /Users/George/Documents/Git/DPLaravel/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/George/Documents/Git/DPLaravel/resources/sass/admin/app.scss */"./resources/sass/admin/app.scss");
+module.exports = __webpack_require__(/*! /Users/George/Documents/Git/DPLaravel/resources/js/admin/app.js */"./resources/js/admin/app.js");
 
 
 /***/ })
