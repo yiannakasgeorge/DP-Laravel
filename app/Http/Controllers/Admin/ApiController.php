@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 //Auth facade
 use Auth;
 
-class ContentController extends Controller
+class ApiController extends Controller
 {
 
     /**

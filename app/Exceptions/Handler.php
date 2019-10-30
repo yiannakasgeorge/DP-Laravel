@@ -58,8 +58,9 @@ class Handler extends ExceptionHandler
      */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
+        
         if ($request->expectsJson()) {
-            return response()->json(['message' => $exception->getMessage()], 401);
+            return response()->json(['error' => 'Unauthenticated.'], 401);
         }
         $guard = array_get($exception->guards(), 0);
         switch($guard){
@@ -67,7 +68,7 @@ class Handler extends ExceptionHandler
                 $login = 'admin.login';
                 break;
             default:
-                $login = 'login';
+                $login = 'admin.login';
                 break;
         }
         return redirect()->guest(route($login));

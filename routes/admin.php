@@ -30,7 +30,6 @@ Route::group(['prefix'  =>  'admin'], function () {
     Route::group(['middleware' => ['auth:admin']], function () {
 
         Route::resource('content', 'Admin\ContentController');
-        Route::apiResource('content', 'Admin\ContentController');
         //ajax request with js for updating status upon clicking the active checkbox
         Route::post('content/updateStatus', 'Admin\ContentController@updateStatus')->name('content.updateStatus');
 
