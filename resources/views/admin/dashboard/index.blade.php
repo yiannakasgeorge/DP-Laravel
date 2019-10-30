@@ -11,7 +11,8 @@
     </div>
   @endif
   <div>
-    <a style="margin: 19px;" href="{{ route('content.create')}}" class="btn btn-primary">Add new post</a>
+    <a  href="{{ route('content.create')}}" class="btn btn-primary">Add new post</a>
+    <a  href="{{ route('admin.logout')}}" class="btn btn-primary">Logout</a>
     </div>  
 
     <h3>Posts</h3>    
