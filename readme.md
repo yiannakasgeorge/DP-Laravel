@@ -6,6 +6,6 @@ http://public.test/scraper,
 http://public.test/admin,
 http://public.test/wholegrain
 API 
-http://public.test/api/register 
+http://public.test/api/register  ({"name": "", "email": "", "password": "", "password_confirmation": ""}')
 http://public.test/api/login 
 http://public.test/api/posts [GET,PUT,POST,DELETE] 
