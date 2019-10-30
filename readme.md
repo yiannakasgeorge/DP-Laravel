@@ -3,8 +3,8 @@ npm run watch,
 npm run hot,
 npm run prod,
 http://public.test/scraper,
-http://public.test/admin
-
+http://public.test/admin,
+http://public.test/wholegrain
 API 
 http://public.test/api/register 
 http://public.test/api/login 
