@@ -3,8 +3,6 @@
 @section('main')
 <div class="row">
 <div class="col-sm-12">
-      
-
   @if(session()->get('success'))
     <div class="alert alert-success">
       {{ session()->get('success') }}  
@@ -15,7 +13,8 @@
     <a  href="{{ route('admin.logout')}}" class="btn btn-primary">Logout</a>
     </div>  
 
-    <h3>Posts</h3>    
+    @foreach($contentsGrouped as $contentGroup => $contents)
+    <h3>Section: {{$contentGroup}}</h3>    
   <table class="table table-striped table-sortable">
     <thead>
         <tr>
@@ -29,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($contents as $content)
+    @foreach ($contents as $content) 
         <tr>
             <td>{{$content->id}}</td>
             <td>{{$content->title}}</td>
@@ -51,9 +50,11 @@
                 </form>
             </td>
         </tr>
-        @endforeach
+          @endforeach
+        
     </tbody>
   </table>
+  @endforeach
   <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 </div>
 <div>

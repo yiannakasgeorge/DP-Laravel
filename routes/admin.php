@@ -39,6 +39,4 @@ Route::group(['prefix'  =>  'admin'], function () {
         })->name('admin.dashboard');
 
     });
-
- 
 });

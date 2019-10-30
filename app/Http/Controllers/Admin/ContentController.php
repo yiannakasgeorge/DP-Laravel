@@ -22,9 +22,8 @@ class ContentController extends Controller
     {
         //
     
-        $contents = Content::all();
-
-        return view('admin.dashboard.index', compact('contents'));
+        $contentsGrouped = Content::all()->sortBy('id', SORT_REGULAR, true)->groupBy('section');
+        return view('admin.dashboard.index', compact('contentsGrouped'));
     }
 
     /**
