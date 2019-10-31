@@ -25,8 +25,8 @@ Route::middleware(['auth:api'])->group(function () {
     Route::delete('/v1/posts', 'Admin\ApiController@delete')->name('delete'); 
 });
 
-Route::get('user', 'AuthController@details');
-Route::post('login', 'AuthController@login');
-Route::post('register', 'AuthController@register');
+Route::get('v1/user', 'AuthController@details');
+Route::post('v1/login', 'AuthController@login');
+Route::post('v1/register', 'AuthController@register');
 
 
