@@ -20,9 +20,9 @@ use Illuminate\Http\Request;
 //API Routes
 Route::middleware(['auth:api'])->group(function () {
     Route::post('/v1/posts', 'Admin\ApiController@post')->name('post');
-    Route::get('/v1/posts', 'Admin\ApiController@get')->name('get');
-    Route::put('/v1/posts', 'Admin\ApiController@put')->name('put');   
-    Route::delete('/v1/posts', 'Admin\ApiController@delete')->name('delete'); 
+    Route::get('/v1/posts/{id}', 'Admin\ApiController@get')->name('get');
+    Route::put('/v1/posts/{id}', 'Admin\ApiController@put')->name('put');   
+    Route::delete('/v1/posts/{id}', 'Admin\ApiController@delete')->name('delete'); 
 });
 
 Route::get('v1/user', 'AuthController@details');

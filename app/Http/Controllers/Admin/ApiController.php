@@ -136,8 +136,8 @@ class ApiController extends Controller
     public function destroy($id)
     {
         //
-        $contact = Content::find($id);
-        $contact->delete();
+        $content = Content::find($id);
+        $content->delete();
 
         return redirect('/admin/content')->with('success', 'Post deleted.');
     }
@@ -147,25 +147,78 @@ class ApiController extends Controller
     }
 
     //API
-    public function get(Request $request) {  
-        return response()->json([
-            'cars' => [
-                 'registration' => 'ABC001',
-                 'dateRegistered' => '2019-01-01',
-                 'color' => 'black',
-                 'make' => 'tesla',
-                 'model' => 's'
-            ]
-        ], 200);
+    public function get($id) {  
+
+        if (Content::where('id', $id)->exists()) {
+            $content = Content::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
+            return response($content, 200);
+          } else {
+            return response()->json([
+              "message" => "Post not found"
+            ], 404);
+          }
       }
 
     public function post(Request $request) {
-        // code to create records of cars
+
+         //
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+        $content = new Content([
+            'title' => $request->title,
+            'section' => $request->title,
+            'content' => $request->title,
+            'image' => $request->title,
+            'active' =>  $request->title,
+           
+        ]);
+
+        $content->save();
+    
+        return response()->json([
+            "message" => "Post record created"
+        ], 201);
     }
-    public function put(Request $request) {
-        // code to update records of cars
+   
+    public function put(Request $request, $id) {
+
+        if (Content::where('id', $id)->exists()) {
+           
+            $content = Content::find($id);
+            $content->title = is_null($request->title) ? $content->title : $request->title;
+            $content->section = is_null($request->section) ? $content->section : $request->section;
+            $content->content = is_null($request->content) ? $content->content : $request->content;
+            $content->image = is_null($request->image) ? $content->image : $request->image;
+            $content->active = is_null($request->active) ? $content->active : $request->active;
+
+            $content->save();
+    
+            return response()->json([
+                "message" => "Post updated successfully"
+            ], 200);
+            } else {
+            return response()->json([
+                "message" => "Post not found"
+            ], 404);
+            
+        }
+
     }
-    public function delete(Request $request) {
-        // code to delete records of cars
+    public function delete(Request $id) {
+        if(Content::where('id', $id)->exists()) {
+            $content = Content::find($id);
+            $content->delete();
+    
+            return response()->json([
+              "message" => "Post deleted"
+            ], 202);
+          } else {
+            return response()->json([
+              "message" => "Post not found"
+            ], 404);
+          }
     }
 }
