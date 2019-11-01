@@ -9,8 +9,7 @@ $(document).ready(function() {
         $('input.status').change(function() {
 
             var id = $(this).data("id");
-            var currentStatus = $(this).is(":checked");
-            var newStatus = currentStatus == true ? 1 : 0;
+            var newStatus = $(this).is(":checked") == true ? 1 : 0;
             var csrf = $('#token').val();
 
             //TODO use hidden class instead to show and hide div
