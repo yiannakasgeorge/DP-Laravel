@@ -16,16 +16,18 @@ class WholegrainWebController extends Controller
         $data['metaAuthor'] = 'George Yiannakas';
         $data['currentYear'] = date("Y");
         $data['footerText'] = '©' .$data['currentYear']. ' Copyright. All rights reserved | Developed by ' .$data['metaAuthor'];
-        $data['aboutText'] = $this->getContent('about');
+        $data['aboutData'] = $this->getContent('about');
  
         return view('index')->with($data);
     }
 
     public function getContent($section) {
-        $html = DB::select('SELECT content FROM contents WHERE active IS True LIMIT 1');
+        $html = DB::select('SELECT * FROM contents WHERE active IS True LIMIT 1');
         //TODO Add safeguards here
+     
         if($html && $html[0]){
-            return $html[0]->content;
+            $content = [ "text" => $html[0]->content, "imageUrl" => $html[0]->image ];
+            return $content;
         } 
 
         return '[[[[[No db records]]]]]';

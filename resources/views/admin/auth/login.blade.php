@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                 <label><input type="checkbox" name="remember"><span class="label-text">Stay Signed in</span></label>
-                <button type="submit" class="btn btn-black" value="submit">Login</button>
+                <button type="submit" class="btn btn-black text-light" value="submit">Login</button>
                 </div>
                 
             </form>

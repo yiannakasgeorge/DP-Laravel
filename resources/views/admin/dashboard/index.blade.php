@@ -23,6 +23,7 @@
           <td>Content</td>
           <td>Image</td>
           <td>Section</td>
+          <td>Date</td>
           <td>Active</td>
     
         </tr>
@@ -35,6 +36,7 @@
             <td>{!!$content->content!!}</td>
             <td>{{$content->image}}</td>
             <td>{{$content->section}}</td>
+            <td>{{$content->created_at}}</td>
             <td>
               <input type="checkbox" class="form-control status" data-id="{{$content->id}}" name="active" value="1" {{ $content->active == 1 ? 'checked' : '' }}/>
             </td>

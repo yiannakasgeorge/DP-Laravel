@@ -23,3 +23,9 @@ Route::middleware(['auth:api'])->group(function () {
 Route::get('v1/user', 'AuthController@details');
 Route::post('v1/login', 'AuthController@login');
 Route::post('v1/register', 'AuthController@register');
+
+
+Example: POST (new post) at http://public.test/api/v1/posts/
+ {"title": "this is my title", "content": "this is my content", "section": "about", "image": "path", "active": 1}
+
+You may post an image as well by adding this param : uploads[] in postman and select file(s)
