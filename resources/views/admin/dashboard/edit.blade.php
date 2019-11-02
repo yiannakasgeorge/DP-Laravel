@@ -2,6 +2,7 @@
 @section('main')
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
+    <a  href="{{ route('content.index')}}" class="btn btn-primary">Back to main</a>
         <h2>Update post</h2>
 
         @if ($errors->any())
@@ -14,6 +15,7 @@
         </div>
         <br /> 
         @endif
+       
         <form method="post" action="{{ route('content.update', $content->id) }}">
             @method('PATCH') 
             @csrf

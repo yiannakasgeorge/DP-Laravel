@@ -17,4 +17,18 @@ $(document).ready(function() {
         e.preventDefault();
         $('form.search-nav').find('input.search').toggleClass('d-none');
     });
+    $('.top-nav.navbar-nav li').click(function(e) {
+        $('.top-nav.navbar-nav li').each(function(e) {
+            $(this).removeClass('active');
+        })
+
+        $(this).addClass('active');
+    });
+    $('nav .navbar-nav li').click(function(e) {
+        $('nav .navbar-nav li').each(function(e) {
+            $(this).removeClass('active');
+        })
+
+        $(this).addClass('active');
+    });
 });

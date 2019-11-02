@@ -2,6 +2,7 @@
 @section('main')
 <div class="row">
  <div class="col-sm-8 offset-sm-2">
+ <a  href="{{ route('content.index')}}" class="btn btn-primary">Back to main</a>
     <h3 >Add new post</h3>
   <div>
     @if ($errors->any())
@@ -46,7 +47,7 @@
               <input type="checkbox" class="form-control" name="active" />
           </div>
                           
-          <button type="submit" class="btn btn-primary-outline">Add post</button>
+          <button type="submit" class="btn btn-primary">Add post</button>
       </form>
   </div>
 </div>
