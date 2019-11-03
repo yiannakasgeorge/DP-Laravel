@@ -16,13 +16,13 @@ class WholegrainWebController extends Controller
         $data['metaAuthor'] = 'George Yiannakas';
         $data['currentYear'] = date("Y");
         $data['footerText'] = '©' .$data['currentYear']. ' Copyright. All rights reserved | Developed by ' .$data['metaAuthor'];
-        $data['aboutData'] = $this->getContent('about');
+        $data['aboutData'] = $this->getContentBySection('about');
  
         return view('index')->with($data);
     }
 
-    public function getContent($section) {
-        $html = DB::select('SELECT * FROM contents WHERE active IS True LIMIT 1');
+    public function getContentBySection($section) {
+        $html = DB::select('SELECT * FROM contents WHERE active IS True AND section = "'. $section .'" LIMIT 1');
         //TODO Add safeguards here
      
         if($html && $html[0]){
