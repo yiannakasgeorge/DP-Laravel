@@ -5,6 +5,11 @@ HOW TO \
 -Run “composer update” to load all composer repositories/depedencies required\
 -Create a new .env file in you root dir and copy all text from .env.example\
 -Make the necessary changed to the DB related fields in .env file\
+-Add the two new variables in the .env file\
+\
+SIGMALIVE_BASE_URL = https://www.sigmalive.com/ \
+SIGMALIVE_SCRAPER_URL = ${SIGMALIVE_BASE_URL}/news/local \
+\
 -Run “php artisan migrate” to generate all DB tables from the migration folder\
 -Run “php artisan key:generate” in your root folder to generate Laravel’s app key\
 -Install Valet (https://laravel.com/docs/5.7/valet)\
