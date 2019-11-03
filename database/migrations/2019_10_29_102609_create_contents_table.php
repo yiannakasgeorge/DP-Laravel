@@ -20,6 +20,7 @@ class CreateContentsTable extends Migration
             $table->boolean('active'); 
             $table->text('content');
             $table->string('image');  
+            $table->timestamps();
         });
     }
 
